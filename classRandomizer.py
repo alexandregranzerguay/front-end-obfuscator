@@ -6,11 +6,11 @@ import sys
 import base64
 import shutil
 
-# Make sure iv and key are the same if you want to decrypt encrypted file.
-# iv = Random.new().read(16)
-# key = 'Sixteen byte key'
+
 MAX_KEY_SIZE = 26
-folder = '/home/alexandre/Downloads/Alex/Alex/encrypted-files'
+folder = '/home/alexandre/front-end-obfuscator/encrypted-files'
+bootstrapClasses = ['section', 'focus', 'open', 'navbar', 'caret', 'label', 'table', 'img-responsive', 'img-rounded', 'img-thumbnail', 'img-circle', 'sr-only', 'lead', 'text-muted', 'text-primary', 'text-warning', 'text-danger', 'text-success', 'text-info', 'text-left', 'text-right', 'text-center', 'h6', 'h1', 'h2', 'h3', 'h4', 'h5', 'page-header', 'list-unstyled', 'list-inline', 'initialism', 'pull-right', 'prettyprint', 'pre-scrollable', 'container', 'row', 'col-lg-12', 'col-xs-11', 'col-xs-1', 'col-xs-2', 'col-xs-3', 'col-xs-4', 'col-xs-5', 'col-xs-6', 'col-xs-7', 'col-xs-8', 'col-xs-9', 'col-xs-10', 'col-xs-12', 'col-sm-11', 'col-sm-1', 'col-sm-2', 'col-sm-3', 'col-sm-4', 'col-sm-5', 'col-sm-6', 'col-sm-7', 'col-sm-8', 'col-sm-9', 'col-sm-10', 'col-sm-12', 'col-sm-push-1', 'col-sm-push-2', 'col-sm-push-3', 'col-sm-push-4', 'col-sm-push-5', 'col-sm-push-6', 'col-sm-push-7', 'col-sm-push-8', 'col-sm-push-9', 'col-sm-push-10', 'col-sm-push-11', 'col-sm-pull-1', 'col-sm-pull-2', 'col-sm-pull-3', 'col-sm-pull-4', 'col-sm-pull-5', 'col-sm-pull-6', 'col-sm-pull-7', 'col-sm-pull-8', 'col-sm-pull-9', 'col-sm-pull-10', 'col-sm-pull-11', 'col-sm-offset-1', 'col-sm-offset-2', 'col-sm-offset-3', 'col-sm-offset-4', 'col-sm-offset-5', 'col-sm-offset-6', 'col-sm-offset-7', 'col-sm-offset-8', 'col-sm-offset-9', 'col-sm-offset-10', 'col-sm-offset-11', 'col-md-11', 'col-md-1', 'col-md-2', 'col-md-3', 'col-md-4', 'col-md-5', 'col-md-6', 'col-md-7', 'col-md-8', 'col-md-9', 'col-md-10', 'col-md-12', 'col-md-push-0', 'col-md-push-1', 'col-md-push-2', 'col-md-push-3', 'col-md-push-4', 'col-md-push-5', 'col-md-push-6', 'col-md-push-7', 'col-md-push-8', 'col-md-push-9', 'col-md-push-10', 'col-md-push-11', 'col-md-pull-0', 'col-md-pull-1', 'col-md-pull-2', 'col-md-pull-3', 'col-md-pull-4', 'col-md-pull-5', 'col-md-pull-6', 'col-md-pull-7', 'col-md-pull-8', 'col-md-pull-9', 'col-md-pull-10', 'col-md-pull-11', 'col-md-offset-0', 'col-md-offset-1', 'col-md-offset-2', 'col-md-offset-3', 'col-md-offset-4', 'col-md-offset-5', 'col-md-offset-6', 'col-md-offset-7', 'col-md-offset-8', 'col-md-offset-9', 'col-md-offset-10', 'col-md-offset-11', 'col-lg-11', 'col-lg-1', 'col-lg-2', 'col-lg-3', 'col-lg-4', 'col-lg-5', 'col-lg-6', 'col-lg-7', 'col-lg-8', 'col-lg-9', 'col-lg-10', 'col-lg-push-0', 'col-lg-push-1', 'col-lg-push-2', 'col-lg-push-3', 'col-lg-push-4', 'col-lg-push-5', 'col-lg-push-6', 'col-lg-push-7', 'col-lg-push-8', 'col-lg-push-9', 'col-lg-push-10', 'col-lg-push-11', 'col-lg-pull-0', 'col-lg-pull-1', 'col-lg-pull-2', 'col-lg-pull-3', 'col-lg-pull-4', 'col-lg-pull-5', 'col-lg-pull-6', 'col-lg-pull-7', 'col-lg-pull-8', 'col-lg-pull-9', 'col-lg-pull-10', 'col-lg-pull-11', 'col-lg-offset-0', 'col-lg-offset-1', 'col-lg-offset-2', 'col-lg-offset-3', 'col-lg-offset-4', 'col-lg-offset-5', 'col-lg-offset-6', 'col-lg-offset-7', 'col-lg-offset-8', 'col-lg-offset-9', 'col-lg-offset-10', 'col-lg-offset-11', 'table-bordered', 'table-responsive', 'form-control', 'form-group', 'checkbox', 'checkbox-inline', 'input-sm', 'input-lg', 'control-label', 'input-group-addon', 'form-control-static', 'help-block', 'btn', 'active', 'btn-default', 'btn-primary', 'btn-warning', 'btn-danger', 'btn-success', 'btn-info', 'btn-link', 'btn-lg', 'btn-xs', 'btn-block', 'fade', 'in', 'collapse', 'collapsing', 'glyphicon', 'dropdown', 'dropdown-menu', 'divider', 'dropdown-header', 'dropdown-backdrop', 'btn-group-vertical', 'btn-group', 'dropdown-toggle', 'btn-group-justified', 'input-group', 'col', 'input-group-btn', 'nav', 'nav-divider', 'nav-tabs', 'nav-justified', 'nav-tabs-justified', 'pill-pane', 'navbar-header', 'navbar-collapse', 'navbar-static-top', 'navbar-fixed-bottom', 'navbar-fixed-top', 'navbar-brand', 'navbar-toggle', 'icon-bar', 'navbar-nav', 'navbar-left', 'navbar-right', 'navbar-form', 'navbar-btn', 'navbar-text', 'navbar-default', 'navbar-link', 'navbar-inverse', 'breadcrumb', 'pagination', 'pager', 'label-default', 'label-primary', 'label-success', 'label-info', 'label-warning', 'label-danger', 'badge', 'jumbotron', 'thumbnail', 'caption', 'alert', 'alert-link', 'alert-dismissable', 'close', 'alert-success', 'alert-info', 'alert-warning', 'alert-danger', 'progress', 'progress-bar', 'progress-bar-success', 'progress-bar-info', 'progress-bar-warning', 'progress-bar-danger', 'media-body', 'media', 'media-object', 'media-heading', 'pull-left', 'media-list', 'list-group', 'list-group-item', 'list-group-item-heading', 'list-group-item-text', 'panel', 'panel-body', 'panel-heading', 'panel-title', 'panel-footer', 'panel-default', 'panel-primary', 'panel-success', 'panel-warning', 'panel-danger', 'panel-info', 'well', 'well-lg', 'well-sm', 'modal-open', 'modal', 'modal-dialog', 'modal-content', 'modal-backdrop', 'modal-header', 'modal-title', 'modal-body', 'modal-footer', 'tooltip', 'top', 'right', 'bottom', 'left', 'tooltip-inner', 'tooltip-arrow', 'popover', 'popover-title', 'popover-content', 'arrow', 'carousel', 'carousel-inner', 'item', 'prev', 'next', 'carousel-control', 'glyphicon-chevron-right', 'icon-next', 'carousel-indicators', 'carousel-caption', 'hide', 'show', 'invisible', 'text-hide', 'affix', 'hidden', 'visible-xs', 'visible-sm', 'visible-md', 'visible-lg', 'hidden-xs', 'hidden-sm', 'hidden-md', 'hidden-lg', 'visible-print', 'hidden-print']
+
 
 def main():
     # user_input = raw_input("what is the name of the file (with extension)")  #use raw_input for python 2.X or input for python 3.X
@@ -29,7 +29,10 @@ def main():
 
     key = raw_input('enter a password')
     files = [f for f in os.listdir('.') if os.path.isfile(f)]
+    # files = ["app.js", "Alexandre Granzer-Guay.php"] #Use this if you only want to work with one file (must use two files for the loop to work though)
     for f in files:
+        if "LICENSE" in f or "README" in f:
+            continue
         filename, extension = f.split(".")
         print(filename, extension)
         # Determine the extension of the file.
@@ -50,28 +53,6 @@ def main():
             CSSclassSelector(f, f2, key)
 
 
-# Class Obfuscating function
-# def obfuscator(classname, key, iv):
-
-
-# def getMode():
-#     while True:
-#         print('Do you wish to encrypt or decrypt a message?')
-#         mode = raw_input().lower()
-#         if mode in 'encrypt e decrypt d'.split():
-#             return mode
-#         else:
-#             print('Enter either "encrypt" or "e" or "decrypt" or "d".')
-
-
-# def getKey():
-#     # key = 0
-#     while True:
-#         print('Enter the key number (1-%s)' % (MAX_KEY_SIZE))
-#         key = int(raw_input())
-#         if (key >= 1 and key <= MAX_KEY_SIZE):
-#            return key
-
 def encode(key, string):
     encoded_chars = []
     for i in xrange(len(string)):
@@ -79,34 +60,7 @@ def encode(key, string):
         encoded_c = chr(ord(string[i]) + ord(key_c) % 256)
         encoded_chars.append(encoded_c)
     encoded_string = "".join(encoded_chars)
-    return base64.urlsafe_b64encode(encoded_string)
-
-# def getTranslatedMessage(mode, message, key):
-#     if mode[0] == 'd':
-#         key = -key
-#     translated = ''
-#     for symbol in message:
-#         if symbol.isalpha():
-#             num = ord(symbol)
-#             num += key
-#             if symbol.isupper():
-#                 if num > ord('Z'):
-#                     num -= 26
-#                 elif num < ord('A'):
-#                     num += 26
-#             elif symbol.islower():
-#                 print(ord('z'), ord('a'))
-#                 if num > ord('z'):
-#                     num -= 26
-#                 elif num < ord('a'):
-#                     num += 26
-#             translated += chr(num)
-#         else:
-#             translated += symbol
-#     return translated
-
-    # print('Your translated text is:')
-    # print(getTranslatedMessage(mode, message, key))
+    return base64.urlsafe_b64encode(encoded_string).encode("hex")
 
 
 def PHPclassSelector(document, document2, key):
@@ -123,12 +77,16 @@ def PHPclassSelector(document, document2, key):
         if "class" in line and flag is 0:
             print(line)
             words = PHPclassStripper(line)
-            for word in words:
-                en_word = encode(key, word)
-                line = line.replace(word, en_word)
-                print("not encrypted class name:" + word)
-                print("encrypted class name:" + en_word)
-                print("changed line:" + line)
+            # if "section" in words:
+            #     pass
+            if "glyphicon" not in words:
+                for word in words:
+                    if word not in bootstrapClasses:
+                        en_word = encode(key, word)
+                        line = line.replace(word, en_word)
+                        print("not encrypted class name:" + word)
+                        print("encrypted class name:" + en_word)
+                        print("changed line:" + line)
         # Once it is the end of embedded script, lower the flag
         if "</script>" in line:
             flag = 0
@@ -248,9 +206,14 @@ def JSclassStripper(line, flag):
     elif flag is 2:
         print('Entered JS class stripper')
         print(line)
-        new_string = line.split("ass(\"", 1)[1]
-        print(new_string)
-        className = new_string.split("\"", 1)[0]
+        try:
+            new_string = line.split("ass(\"", 1)[1]
+            print(new_string)
+            className = new_string.split("\"", 1)[0]
+        except:
+            new_string = line.split("ass(\'", 1)[1]
+            print(new_string)
+            className = new_string.split("\'", 1)[0]
         print("selected class name is:" + className)
     return className
 
@@ -262,14 +225,20 @@ def CSSclassSelector(document, document2, key):
         if "." in line:
             print(line)
             words = CSSclassStripper(line)
-            for word in words:
-                en_word = encode(key, word)
-                toReplace = "."+word                            #was running into issues with ".h1" replacing "h1" also
-                willReplace = "."+str(en_word)
-                line = line.replace(toReplace, willReplace, 1)
-                print("not encrypted class name:" + word)
-                print("encrypted class name:" , en_word)
-                print("changed line:" + line)
+            if "glyphicon" not in words:
+                for word in words:
+                    if ":" in word:
+                        word = word.split(":")[0]
+                    if "," in word:
+                        word = word.split(",")[0]
+                    if word not in bootstrapClasses and "\"" not in word:
+                        en_word = encode(key, word)
+                        toReplace = "."+word                            #was running into issues with ".h1" replacing "h1" also
+                        willReplace = "."+str(en_word)
+                        line = line.replace(toReplace, willReplace, 1)
+                        print("not encrypted class name:" + word)
+                        print("encrypted class name:" , en_word)
+                        print("changed line:" + line)
         f2.write(line)
     f2.close()
     print("done changing class names")
@@ -286,13 +255,6 @@ def CSSclassStripper(line):
             print("TO BE APPENDED: " + each.split()[0])
             words.append(each.split()[0])                   #append the class name to words
     return words
-
-# Use unObfuscator instead of obfuscator to decrypt encrypted file
-# def unObfuscator(word):
-#     c2 = AES.new(key, AES.MODE_CFB, iv)
-#     de_className = c2.decrypt(word)
-#     print('class name is:', de_className)
-#     return de_className
 
 
 if __name__ == "__main__":

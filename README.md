@@ -1,5 +1,5 @@
 # front-end-obfuscator
-### Things to look into
+### Things to look into (Add and Check-off issues as they are solved)
 #### CSS
 + Create array with all bootstrap library and check it as to not obfuscate that part
 + Make sure characters generated are only letters and numbers
