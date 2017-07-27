@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <!-- saved from url=(0036)http://www.alexandregranzerguay.com/ -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Alexandre Granzer-Guay</title>
-	<link href="./Alexandre Granzer-Guay_files/bootstrap.min.css" rel="stylesheet">
-	<link href="./Alexandre Granzer-Guay_files/css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="./Alexandre Granzer-Guay_files/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<!-- <link href="./Alexandre Granzer-Guay_files/css" rel="stylesheet"> -->
+	<link rel="stylesheet" type="text/css" href="main.css">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,7 +27,7 @@
 		</ul>
 	</div>
 	<div class="jumbotron">
-		<div class="icon-menu">	
+		<div class="icon-menu">
 			<p><span class="glyphicon glyphicon-menu-hamburger"></span></p>
 		</div>
 			<div class="intro-info">
@@ -44,20 +45,20 @@
 			<section id="experience" class="section section-experience">
 					<h2 class="section-title text-center">EXPERIENCE</h2>
 							<div class="fullwidth">
-  
+
 							  <div class="timeline group">
-								
+
 								<div class="item">
 								  <h2 class="title">APP DEVELOPMENT</h2>
 								  <p class="description">MY TEAM HAD TO DEVELOP AN APP TO FACILITATE THE SOCIAL INTERGRATION OF PEOPLE WITH VISUAL IMPAIRMENT.
 								  I OVERSAW THE DEVELOPMENT OF A VOICE CONTROLLED USER-INTERFACE. I BRIDGED THE INTERFACE TO AN SQL DATABASE AND ENSURED THE ALGORITHM RAN SMOOTHLY THROUGH THE APP. I MADE SURE THE USER COULD PROPERLY INTERACT WITH THE APP AND PROPERLY STORE, CATEGORIZE, SEARCH AND READ CONTACTS USING TAGS.
 									</p>
 								</div>
-								
+
 								<div class="item">
 								  <h2 class="title">URBAN FARM PLANNING</h2>
 								  <p class="description">THIS PROJECT WAS FOCUSED AROUND THE DEVELOPMENT OF A FARM IN AN URBAN AREA. I OVERSAW FIELD RESEARCH IN MONTREAL AND HAD TO FIND THE RIGHT PROPERTY AND TARGET CUSTOMER FOR THIS PROJECT. THIS TRANSLATED INTO TANGIBLE NUMBERS DURING THE CONCEPTUALIZATION OF THE PROJECT. I DEVELOPED THE FLOOR PLAN AND STRUCTURAL PLAN FOR THE FARM. I ALSO ENSURED THE TIMELINE OF THE PROJECT WAS RESPECTED.</p>
-								</div>							
+								</div>
 							  </div>
 							</div>
 			</section>
@@ -136,13 +137,13 @@
 				</section>
 		</div>
 	</div>
-	
+
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script async="" src="./Alexandre Granzer-Guay_files/analytics.js"></script><script src="./Alexandre Granzer-Guay_files/jquery-1.11.3.js"></script>
+    <!-- <script async="" src="./Alexandre Granzer-Guay_files/analytics.js"></script><script src="./Alexandre Granzer-Guay_files/jquery-1.11.3.js"></script> -->
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="./Alexandre Granzer-Guay_files/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!--jQuery file for all animations-->
-	<script src="./Alexandre Granzer-Guay_files/app.js"></script>
+	<script src="app.js"></script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
