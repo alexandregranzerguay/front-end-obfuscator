@@ -20,30 +20,30 @@ var main = function() {
 	console.log(width_timeline);
 	if(width_timeline<= 1000){
 			$('.timeline-jumbotron').find('.item').addClass('itemsmall');
-			$('.timeline-jumbotron').find('.timeline').addClass('groupsmall').addClass('smalltime');
+			$('.timeline-jumbotron').find('.timeline').addClass('groupsmall smalltime');
 			$('.timeline-jumbotron').find('.itemsmall').removeClass('item');
-			$('.timeline-jumbotron').find('.smalltime').removeClass('group').removeClass('timeline');
+			$('.timeline-jumbotron').find('.smalltime').removeClass('group timeline');
 		}
 		else {
 			$('.timeline-jumbotron').find('.itemsmall').addClass('item');
-			$('.timeline-jumbotron').find('.smalltime').addClass('group').addClass('timeline');
+			$('.timeline-jumbotron').find('.smalltime').addClass('group timeline');
 			$('.timeline-jumbotron').find('.item').removeClass('itemsmall');
-			$('.timeline-jumbotron').find('.timeline').removeClass('groupsmall').removeClass('smalltime');
+			$('.timeline-jumbotron').find('.timeline').removeClass('groupsmall smalltime');
 		}
 	$(window).resize(function(){
 		width_timeline = $('.timeline-jumbotron').width();
 		console.log(width_timeline);
 		if(width_timeline<= 1000){
 			$('.timeline-jumbotron').find('.item').addClass('itemsmall');
-			$('.timeline-jumbotron').find('.timeline').addClass('groupsmall').addClass('smalltime');
+			$('.timeline-jumbotron').find('.timeline').addClass('groupsmall smalltime');
 			$('.timeline-jumbotron').find('.itemsmall').removeClass('item');
-			$('.timeline-jumbotron').find('.smalltime').removeClass('group').removeClass('timeline');
+			$('.timeline-jumbotron').find('.smalltime').removeClass('group timeline');
 		}
 		else {
 			$('.timeline-jumbotron').find('.itemsmall').addClass('item');
-			$('.timeline-jumbotron').find('.smalltime').addClass('group').addClass('timeline');
+			$('.timeline-jumbotron').find('.smalltime').addClass('group timeline');
 			$('.timeline-jumbotron').find('.item').removeClass('itemsmall');
-			$('.timeline-jumbotron').find('.timeline').removeClass('groupsmall').removeClass('smalltime');
+			$('.timeline-jumbotron').find('.timeline').removeClass('groupsmall smalltime');
 		}
 	});
 	relativesize = $('.contact').width()*0.03;

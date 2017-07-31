@@ -54,7 +54,7 @@ body, html {
 }
 /* Basic styling*/
 .jumbotron {
-	background-image: url("images/jumbotron_1.jpg"); /*add an image or good background*/
+	background-image: url("jumbotron_1.jpg"); /*add an image or good background*/
 	height: 100%; /*takes full page of website*/
 	width:100%;
 	background-attachment: fixed;
@@ -107,7 +107,7 @@ body, html {
 }
 
 .timeline-jumbotron {
-	background-image: url("images/timeline.jpg"); /*add an image or good background*/
+	background-image: url("timeline.jpg"); /*add an image or good background*/
 	background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;

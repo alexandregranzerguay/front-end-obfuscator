@@ -28,8 +28,8 @@ def main():
             print(e)
 
     key = raw_input('enter a password')
-    files = [f for f in os.listdir('.') if os.path.isfile(f)]
-    # files = ["app.js", "Alexandre Granzer-Guay.php"] #Use this if you only want to work with one file (must use two files for the loop to work though)
+    # files = [f for f in os.listdir('.') if os.path.isfile(f)]
+    files = ["app.js", "main.css"] #Use this if you only want to work with one file (must use two files for the loop to work though)
     for f in files:
         if "LICENSE" in f or "README" in f:
             continue
@@ -63,7 +63,7 @@ def encode(key, string):
         encoded_c = chr(ord(string[i]) + ord(key_c) % 256)
         encoded_chars.append(encoded_c)
     encoded_string = "".join(encoded_chars)
-    return base64.urlsafe_b64encode(encoded_string).encode("hex")
+    return "_"+str(base64.urlsafe_b64encode(encoded_string).encode("hex"))
 
 
 def PHPclassSelector(document, document2, key):
@@ -85,7 +85,7 @@ def PHPclassSelector(document, document2, key):
             if "glyphicon" not in words:
                 for word in words:
                     if word not in bootstrapClasses:
-                        en_word = "_"+str(encode(key, word))
+                        en_word = encode(key, word)
                         line = line.replace(word, en_word)
                         print("not encrypted class name:" + word)
                         print("encrypted class name:" + en_word)
@@ -121,7 +121,7 @@ def JSclassSelectorForPHP(line, key):
         words = JSclassStripper(line, flag)
         for word in words:
             # print("word list:" + words)
-            en_word = "_"+str(encode(key, word))
+            en_word = encode(key, word)
             line = line.replace(word, str(en_word))     #arg 2 needs to be a string not bytes
             print("not encrypted class name:" + word)
             print("encrypted class name:", en_word)    #changed "+" to "," can't add bytes and strings
@@ -132,7 +132,7 @@ def JSclassSelectorForPHP(line, key):
         words = JSclassStripper(line, flag)
         for word in words:
             # print("word list:" + words)
-            en_word = "_"+str(encode(key, word))
+            en_word = encode(key, word)
             line = line.replace(word, str(en_word))  # arg 2 needs to be a string not bytes
             print("not encrypted class name:" + word)
             print("encrypted class name:", en_word)  # changed "+" to "," can't add bytes and strings
@@ -143,7 +143,7 @@ def JSclassSelectorForPHP(line, key):
         words = JSclassStripper(line, flag)
         for word in words:
             # print("word list:" + words)
-            en_word = "_"+str(encode(key, word))
+            en_word = encode(key, word)
             line = line.replace(word, str(en_word))  # arg 2 needs to be a string not bytes
             print("not encrypted class name:" + word)
             print("encrypted class name:", en_word)  # changed "+" to "," can't add bytes and strings
@@ -157,39 +157,57 @@ def JSclassSelector(document, document2, key):
     f = open(document, "r")
     f2 = open(os.path.join(folder, document2), "w")
     for line in f:
+        if "find" in line:
+            pass
         if "(\"." in line:        #add in new class names
             print(line)
             flag = 0
-            word = JSclassStripper(line, flag)
+            words = JSclassStripper(line, flag).split()
             for word in words:
-                # print("word list:" + words)
-                en_word = "_"+str(encode(key, word))
-                line = line.replace(word, str(en_word))     #arg 2 needs to be a string not bytes
-                print("not encrypted class name:" + word)
-                print("encrypted class name:", en_word)    #changed "+" to "," can't add bytes and strings
-                print("changed line:" + line)
+                if word not in bootstrapClasses:
+                    # print("word list:" + words)
+                    en_word = encode(key, word)
+                    line = line.replace(word, en_word)     #arg 2 needs to be a string not bytes
+                    print("not encrypted class name:" + word)
+                    print("encrypted class name:", en_word)    #changed "+" to "," can't add bytes and strings
+                    print("changed line:" + line)
         elif "(\'." in line:
             print(line)
             flag = 1
-            word = JSclassStripper(line, flag)
+            words = JSclassStripper(line, flag).split()
             for word in words:
-                # print("word list:" + words)
-                en_word = encode(key, word)
-                line = line.replace(word, str(en_word))  # arg 2 needs to be a string not bytes
-                print("not encrypted class name:" + word)
-                print("encrypted class name:", en_word)  # changed "+" to "," can't add bytes and strings
-                print("changed line:" + line)
+                if word not in bootstrapClasses:
+                    # print("word list:" + words)
+                    en_word = encode(key, word)
+                    line = line.replace(word, str(en_word))  # arg 2 needs to be a string not bytes
+                    print("not encrypted class name:" + word)
+                    print("encrypted class name:", en_word)  # changed "+" to "," can't add bytes and strings
+                    print("changed line:" + line)
+        if "find" in line:
+            print(line)
+            flag = 3
+            words = JSclassStripper(line, flag).split()
+            for word in words:
+                if word not in bootstrapClasses:
+                    # print("word list:" + words)
+                    en_word = encode(key, word)
+                    line = line.replace(word, str(en_word))  # arg 2 needs to be a string not bytes
+                    print("not encrypted class name:" + word)
+                    print("encrypted class name:", en_word)  # changed "+" to "," can't add bytes and strings
+                    print("changed line:" + line)
         if "Class" in line:
+            print(line.find("Class"))
             print(line)
             flag = 2
-            word = JSclassStripper(line, flag)
+            words = JSclassStripper(line, flag).split()
             for word in words:
-                # print("word list:" + words)
-                en_word = encode(key, word)
-                line = line.replace(word, str(en_word))  # arg 2 needs to be a string not bytes
-                print("not encrypted class name:" + word)
-                print("encrypted class name:", en_word)  # changed "+" to "," can't add bytes and strings
-                print("changed line:" + line)
+                if word not in bootstrapClasses:
+                    # print("word list:" + words)
+                    en_word = encode(key, word)
+                    line = line.replace(word, str(en_word))  # arg 2 needs to be a string not bytes
+                    print("not encrypted class name:" + word)
+                    print("encrypted class name:", en_word)  # changed "+" to "," can't add bytes and strings
+                    print("changed line:" + line)
         f2.write(line)
     f2.close()
     print("done changing class names")
@@ -199,15 +217,17 @@ def JSclassSelector(document, document2, key):
 
 def JSclassStripper(line, flag):
     words = []
+    className = ''
     if flag is 0:
         # Flag is 0 when (".classname") syntax was used
-        print('Entered JS class stripper')
         print(line)
         new_string = line.split("\".", 1)[1]
         print(new_string)
-        for each in new_string
         className = new_string.split("\"", 1)[0]
-        print("selected class name is:" + className)
+        print (new_string)
+        for each in new_string:
+            className = each
+            print("selected class name is:" + className)
     elif flag is 1:
         # Flag is 1 when ('.classname') syntax was used
         print('Entered JS class stripper')
@@ -226,6 +246,19 @@ def JSclassStripper(line, flag):
             className = new_string.split("\"", 1)[0]
         except:
             new_string = line.split("ass(\'", 1)[1]
+            print(new_string)
+            className = new_string.split("\'", 1)[0]
+        print("selected class name is:" + className)
+    elif flag is 3:
+        # Flag is 2 when addClass or removeClass was used
+        print('Entered JS class stripper')
+        print(line)
+        try:
+            new_string = line.split("find(\".", 1)[1]
+            print(new_string)
+            className = new_string.split("\"", 1)[0]
+        except:
+            new_string = line.split("find(\'.", 1)[1]
             print(new_string)
             className = new_string.split("\'", 1)[0]
         print("selected class name is:" + className)
@@ -251,7 +284,7 @@ def CSSclassSelector(document, document2, key):
                     if word not in bootstrapClasses and "\"" not in word:
                         en_word = encode(key, word)
                         toReplace = "."+word                            #was running into issues with ".h1" replacing "h1" also
-                        willReplace = "."+"_"+str(en_word)
+                        willReplace = "." + (en_word)
                         line = line.replace(toReplace, willReplace, 1)
                         print("not encrypted class name:" + word)
                         print("encrypted class name:" , en_word)
